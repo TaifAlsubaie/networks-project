@@ -1,0 +1,2 @@
+
+<?php $conn = new mysqli("localhost", "root", "", "network"); if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); } ?>
