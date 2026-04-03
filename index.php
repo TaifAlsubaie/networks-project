@@ -193,7 +193,7 @@ if(!q1 ||  !q2 || !q3) {
         const questions = ['q1', 'q2', 'q3'];
         const results = [];
 
-        // التحقق من أن جميع الأسئلة تم اختيارها
+        
         let allAnswered = true;
         questions.forEach(q => {
             const selected = document.querySelector(`input[name="${q}"]:checked`);
@@ -206,32 +206,32 @@ if(!q1 ||  !q2 || !q3) {
             return;
         }
 
-        // مسح أي تنسيقات سابقة (إذا أراد المستخدم المحاولة مرة أخرى)
+        
         document.querySelectorAll('.quiz-item').forEach(item => {
             item.style.backgroundColor = "transparent";
             item.style.borderRadius = "0px";
             item.style.paddingLeft = "0px";
         });
 
-        // التحقق من الإجابات وتحديد الصح والخطأ بصرياً
+        
         results.forEach((selected, index) => {
             const parentItem = selected.closest('.quiz-item');
             
             if (selected.value === "correct") {
                 score++;
-                // تمييز السؤال الصحيح باللون الأخضر الخفيف
+                
                 parentItem.style.backgroundColor = "#eaffea"; 
                 parentItem.style.paddingLeft = "10px";
                 parentItem.style.borderRadius = "8px";
             } else {
-                // تمييز السؤال الخطأ باللون الأحمر الخفيف
+               
                 parentItem.style.backgroundColor = "#ffeaea";
                 parentItem.style.paddingLeft = "10px";
                 parentItem.style.borderRadius = "8px";
             }
         });
 
-        // إظهار النتيجة النهائية في الأسفل
+        
         const resultDiv = document.getElementById('quiz-result');
         resultDiv.style.display = "block";
         
