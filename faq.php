@@ -27,7 +27,7 @@
             -webkit-font-smoothing: antialiased; 
         }
 
-        /* الهيدر: شفاف وبدون أي أقواس أو خلفيات ملونة */
+        
         .faq-header {
             padding: 80px 10% 40px 10%;
             text-align: center;
@@ -51,7 +51,7 @@
             margin: 0 auto; 
         }
 
-        /* كارد السؤال بستايل مودرن ونحيف */
+        
         .faq-card {
             background: #ffffff;
             border: 1px solid var(--border-color); 
@@ -80,7 +80,7 @@
             color: var(--navy-main);
         }
 
-        /* الدائرة الكحلية للسهم */
+        
         .icon-wrapper {
             width: 30px;
             height: 30px;
@@ -92,7 +92,7 @@
             transition: 0.3s ease;
         }
 
-        /* السهم النحيف جداً SVG */
+        
         .icon-arrow-svg {
             fill: none;
             stroke: #ffffff; 
@@ -127,7 +127,7 @@
             line-height: 1.8;
         }
 
-        /* الروابط النصية الذكية (بدلاً من View Details) */
+        
         .quick-link {
             display: inline-block;
             margin-top: 15px;
