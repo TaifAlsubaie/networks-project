@@ -102,7 +102,7 @@
             transition: 0.4s ease;
         }
 
-        /* تأثيرات الفتح */
+        
         .faq-card.active {
             border-color: var(--navy-main);
         }
@@ -246,6 +246,7 @@ const card = q.parentElement;
     </script>
 </body>
 </html>
+
 
 
 <?php include "includes/footer.php"; ?>
