@@ -1,0 +1,209 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f6ff; 
+    color: #0e153a; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #1D3476 0%, #4065b8 100%); 
+    color: #F5F2F2; 
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.hero-section p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: -30px auto 50px;
+    padding: 0 20px;
+}
+
+/* Sections  */
+section {
+    background: #F5F2F2; 
+    border-radius: 12px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* Titles */
+h2 {
+    color: #1D3476; 
+    font-size: 1.8rem;
+    border-bottom: 2px solid #f3f6ff; 
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #4065b8; 
+    margin-top: 20px;
+}
+
+/* Text */
+p {
+    line-height: 1.7;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #e2e8f0; /* 👈 الخط الخارجي للجدول */
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #e2e8f0; /* 👈 الخطوط الداخلية بين الأعمدة والصفوف */
+    text-align: center; /* 👈 يحط كل شيء بالنص */
+}
+
+th {
+    background-color: #f3f6ff; 
+    color: #1D3476; 
+}
+
+/* Hover */
+section:hover {
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+
+/* Buttons  */
+button, .btn {
+    background-color: #2D4DBD; 
+    color: #F5F2F2; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+    opacity: 0.9;
+}
+
+.wifi-icon {
+    width: 32px;           
+    height: 32px;
+    vertical-align: text-bottom; 
+    margin-left: 6px;  
+    fill:#2D4DBD  ; 
+}
+.wireless-icon {
+    width: 32px;           
+    height: 32px;
+    vertical-align: text-bottom; 
+    margin-left: 6px;  
+    fill:#2D4DBD  ;
+}
+.protocol-icon {
+    width: 35px;           
+    height: 35px;
+    vertical-align: text-bottom; 
+    margin-left: 6px;  
+    fill:#2D4DBD  ;
+}
+.performance-icon {
+    width: 35px;           
+    height: 35px;
+    vertical-align: text-bottom; 
+    margin-left: 6px;  
+    fill:#2D4DBD  ;
+}
+/* Container */
+.interactive-container {
+    position: relative;
+    display: flex;           /* 🟢 flex لسهولة المحاذاة */
+    justify-content: center; /* 🟢 يجعل الصورة في الوسط */
+    margin: 40px auto;
+    max-width: 1000px;
+}
+/* الصورة */
+.main-image {
+    width: 100%;
+    height: auto;  /* يضمن ظهور كامل للصورة بدون قص */
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* النقاط القابلة للنقر */
+.spot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: rgba(29, 52, 118, 0.6);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.spot:hover {
+    background: #1D3476;
+    transform: scale(1.2);
+}
+
+/* النصوص التوضيحية */
+.tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #002244;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    position: absolute;
+    z-index: 100;
+    bottom: 140%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* يظهر النص عند المرور على النقطة */
+.spot:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* إحداثيات كل نقطة بالنسبة للصورة */
+#pt-internet { top: 11%; left: 48.5%; }
+#pt-modem    { top: 27%; left: 48.5%; }
+#pt-router   { top: 57%; left: 48.5%; }
+#pt-laptop   { top: 67%; left: 24.5%; }
+#pt-phone    { top: 75%; left: 71.5%; }
+#pt-tv       { top: 61%; left: 91%; }
