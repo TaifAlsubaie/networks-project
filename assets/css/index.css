@@ -1,12 +1,10 @@
-/* --- الإعدادات الأساسية --- */
 body {
     margin: 0;
-    padding-top: 85px; /* مساحة لتعويض الهيدر الثابت */
+    padding-top: 85px; 
     font-family: 'Segoe UI', Roboto, sans-serif;
-    background-color: #ffffff; /* الخلفية بيضاء بالكامل كما طلبت */
+    background-color: #ffffff; 
 }
 
-/* --- تنسيق الهيدر --- */
 .main-header {
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -30,7 +28,6 @@ body {
     padding: 0 20px;
 }
 
-/* --- اللوقو --- */
 .logo-container a {
     display: flex;
     align-items: center;
@@ -50,7 +47,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- روابط التنقل --- */
 .nav-links {
     list-style: none;
     display: flex;
@@ -61,7 +57,7 @@ body {
 
 .nav-item {
     text-decoration: none !important;
-    color: #64748b !important; /* لون رمادي هادئ */
+    color: #64748b !important; 
     font-weight: 600;
     font-size: 0.95rem;
     transition: 0.3s;
@@ -74,20 +70,18 @@ body {
     background-color: #f8fafc;
 }
 
-/* تمييز الصفحة النشطة (التي يتواجد فيها المستخدم) */
 .nav-item.active {
     color: #1d3476 !important;
     background-color: rgba(29, 52, 118, 0.08) !important;
     font-weight: 800;
 }
 
-/* --- زر الـ Admin (الحل النهائي للألوان) --- */
 .admin-btn {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #f1f5f9 !important; /* رمادي فاتح جداً */
-    color: #1d3476 !important; /* كحلي */
+    background-color: #f1f5f9 !important; 
+    color: #1d3476 !important; 
     padding: 10px 20px;
     border-radius: 8px;
     text-decoration: none !important;
@@ -96,27 +90,23 @@ body {
     transition: 0.3s;
 }
 
-/* عند التأشير بالماوس */
 .admin-btn:hover {
-    background-color: #1d3476 !important; /* يتحول لكحلي */
-    color: #ffffff !important; /* النص أبيض */
+    background-color: #1d3476 !important; 
+    color: #ffffff !important;
     border-color: #1d3476 !important;
     transform: translateY(-2px);
 }
 
-/* في حال كان الأدمن هو الصفحة النشطة */
 .admin-btn.active {
     background-color: #1d3476 !important;
     color: #ffffff !important;
 }
 
-/* إزالة الألوان الافتراضية للروابط (البنفسجي والأحمر) */
 a, a:visited, a:active, a:focus {
     text-decoration: none;
     outline: none;
 }
 
-/* --- الفوتر --- */
 footer {
     background-color: #ffffff;
     color: #64748b;
