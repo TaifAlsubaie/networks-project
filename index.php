@@ -1,5 +1,6 @@
 <?php include "includes/navbar.php"; ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,7 +162,7 @@
             const q2 = document.querySelector('input[name="q2"]:checked');
             const q3 = document.querySelector('input[name="q3"]:checked');
 
-if(!q1  !q2  !q3) {
+if(!q1 ||  !q2 || !q3) {
                 alert("Please answer all questions!");
                 return;
             }
@@ -186,11 +187,69 @@ if(!q1  !q2  !q3) {
         }
     </script>
 
-    <footer style="padding: 20px; text-align: center; background: var(--dark-navy); color: white; font-size: 0.9rem;">
-        &copy; 2026 Network Project | All Rights Reserved
-    </footer>
+<script>
+    function checkQuiz() {
+        let score = 0;
+        const questions = ['q1', 'q2', 'q3'];
+        const results = [];
 
+        // التحقق من أن جميع الأسئلة تم اختيارها
+        let allAnswered = true;
+        questions.forEach(q => {
+            const selected = document.querySelector(`input[name="${q}"]:checked`);
+            if (!selected) allAnswered = false;
+            results.push(selected);
+        });
+
+        if (!allAnswered) {
+            alert("Please answer all questions!");
+            return;
+        }
+
+        // مسح أي تنسيقات سابقة (إذا أراد المستخدم المحاولة مرة أخرى)
+        document.querySelectorAll('.quiz-item').forEach(item => {
+            item.style.backgroundColor = "transparent";
+            item.style.borderRadius = "0px";
+            item.style.paddingLeft = "0px";
+        });
+
+        // التحقق من الإجابات وتحديد الصح والخطأ بصرياً
+        results.forEach((selected, index) => {
+            const parentItem = selected.closest('.quiz-item');
+            
+            if (selected.value === "correct") {
+                score++;
+                // تمييز السؤال الصحيح باللون الأخضر الخفيف
+                parentItem.style.backgroundColor = "#eaffea"; 
+                parentItem.style.paddingLeft = "10px";
+                parentItem.style.borderRadius = "8px";
+            } else {
+                // تمييز السؤال الخطأ باللون الأحمر الخفيف
+                parentItem.style.backgroundColor = "#ffeaea";
+                parentItem.style.paddingLeft = "10px";
+                parentItem.style.borderRadius = "8px";
+            }
+        });
+
+        // إظهار النتيجة النهائية في الأسفل
+        const resultDiv = document.getElementById('quiz-result');
+        resultDiv.style.display = "block";
+        
+        if (score === 3) {
+            resultDiv.style.backgroundColor = "#d4edda";
+            resultDiv.style.color = "#155724";
+            resultDiv.innerHTML = "Your Score: " + score + "/3 - Excellent! All answers are correct. ";
+        } else {
+            resultDiv.style.backgroundColor = "#fff3cd";
+            resultDiv.style.color = "#856404";
+            resultDiv.innerHTML = "Your Score: " + score + "/3 - Some answers are incorrect. Correct questions are highlighted in green, and mistakes in red.";
+        }
+
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>
 </body>
 </html>
+
 
 <?php include "includes/footer.php"; ?>
