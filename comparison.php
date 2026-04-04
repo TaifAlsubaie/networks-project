@@ -115,7 +115,7 @@
         </div>
     </div>
 </main>
-
+ 
 <script>
 function showContent(type) {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
