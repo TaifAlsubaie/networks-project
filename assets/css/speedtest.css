@@ -1,122 +1,137 @@
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: #f8fafc;
     margin: 0;
+    padding-top: 85px; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff; 
+    color: #334155;
 }
 
-.hero-section {
-    background: linear-gradient(135deg, #1a3a5f 0%, #2c5da1 100%);
-    color: white;
-    padding: 70px 20px;
-    text-align: center;
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
 }
 
-.main-container {
-    max-width: 1000px;
-    margin: -30px auto 50px;
-    padding: 0 20px;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1250px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 25px;
 }
 
-.content-card {
-    background: #ffffff;
+.logo-container a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.site-logo {
+    height: 45px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1d3476;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #475569; 
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: #1d3476;
+    transition: all 0.3s ease;
+    width: 0;
+}
+
+.nav-item:hover {
+    color: #1d3476;
+    background-color: #f8fafc;
+}
+
+.nav-item:hover::after {
+    width: calc(100% - 24px);
+}
+
+.nav-item.active {
+    color: #1d3476;
+    background-color: rgba(29, 52, 118, 0.08); */
+}
+
+.nav-item.active::after {
+    width: calc(100% - 24px);
+}
+
+.admin-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f1f5f9;
+    color: #1d3476;
+    padding: 10px 20px;
     border-radius: 12px;
-    padding: 35px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
     border: 1px solid #e2e8f0;
 }
 
-.section-title {
-    color: #1a3a5f;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.simulator-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.controls-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 100%;
-}
-
-.control-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.control-group label {
-    font-weight: bold;
-    color: #1a3a5f;
-    margin-bottom: 8px;
-}
-
-select {
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background-color: white;
-}
-
-.test-btn {
-    background: #2c5da1;
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    width: 100%;
-}
-
-.test-btn:hover {
-    background: #1a3a5f;
+.admin-btn:hover {
+    background-color: #1d3476;
+    color: #ffffff;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 52, 118, 0.2);
 }
 
-.results-area {
-    text-align: center;
-    width: 100%;
-}
-
-.gauge-container {
-    width: 180px;
-    height: 180px;
-    border: 6px solid #f1f5f9;
-    border-top: 6px solid #2c5da1;
-    border-radius: 50%;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #f8fafc;
-}
-
-.speed-number {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #1a3a5f;
-}
-
-.unit {
+footer {
+    background-color: #ffffff;
     color: #64748b;
-    font-weight: 500;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.95rem;
 }
 
-.insight-box {
-    margin-top: 25px;
-    padding: 20px;
-    background-color: #f0f7ff;
-    border-left: 5px solid #2c5da1;
-    color: #1e40af;
-    border-radius: 4px;
-    display: none; 
+footer strong {
+    color: #1d3476;
 }
