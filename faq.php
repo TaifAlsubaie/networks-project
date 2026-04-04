@@ -1,7 +1,5 @@
 <?php include "includes/navbar.php"; ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +18,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body { 
             font-family: 'Inter', sans-serif; 
             background-color: #ffffff; 
@@ -27,47 +26,49 @@
             -webkit-font-smoothing: antialiased; 
         }
 
-        
         .faq-header {
-            padding: 80px 10% 40px 10%;
+            padding: 60px 5% 30px 5%;
             text-align: center;
-            background: transparent;
         }
+        
         .faq-header h1 { 
-            font-size: 2.8rem; 
+            font-size: 2.6rem; 
             font-weight: 600; 
             color: var(--navy-main); 
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
+        
         .faq-header p { 
             color: var(--text-muted); 
             font-size: 1.1rem;
-            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .faq-container { 
-            padding: 20px 10% 80px 10%; 
-            max-width: 900px; 
+            padding: 20px 5% 80px 5%; 
+            max-width: 1050px; 
             margin: 0 auto; 
         }
 
-        
         .faq-card {
             background: #ffffff;
             border: 1px solid var(--border-color); 
             border-left: 4px solid var(--navy-main); 
-            border-radius: 12px;
-            margin-bottom: 15px;
+            border-radius: 14px;
+            margin-bottom: 16px;
             overflow: hidden;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
+            width: 100%;
         }
 
         .faq-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            border-color: #cbd5e1;
         }
 
         .faq-question {
-            padding: 22px 28px;
+            padding: 24px 30px; 
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -75,40 +76,42 @@
         }
         
         .question-text {
-            font-size: 1.05rem;
-            font-weight: 500;
+            font-size: 1.1rem;
+            font-weight: 550;
             color: var(--navy-main);
+            padding-right: 15px;
         }
 
-        
         .icon-wrapper {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             background: var(--navy-main);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: 0.3s ease;
+            flex-shrink: 0;
         }
 
-        
         .icon-arrow-svg {
             fill: none;
             stroke: #ffffff; 
-            stroke-width: 2; 
+            stroke-width: 2.5; 
             stroke-linecap: round;
             stroke-linejoin: round;
             transition: 0.4s ease;
         }
 
-        
         .faq-card.active {
             border-color: var(--navy-main);
+            background-color: #fcfdfe;
         }
+        
         .faq-card.active .icon-wrapper {
             background: var(--navy-light);
         }
+        
         .faq-card.active .icon-arrow-svg {
             transform: rotate(180deg);
             stroke: var(--navy-main);
@@ -117,29 +120,31 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: max-height 0.4s ease-out;
         }
         
         .faq-content { 
-            padding: 0 28px 25px 28px; 
+            padding: 0 30px 25px 30px; 
             color: var(--text-muted); 
-            font-size: 0.95rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
+            border-top: 1px solid #f8fafc;
+            padding-top: 18px;
         }
 
-        
         .quick-link {
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 12px;
             color: var(--navy-main);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
             transition: 0.2s;
         }
+        
         .quick-link:hover {
+            opacity: 0.7;
             text-decoration: underline;
-            opacity: 0.8;
         }
 
     </style>
@@ -225,7 +230,7 @@
     <script>
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => {
-const card = q.parentElement;
+                const card = q.parentElement;
                 const answer = q.nextElementSibling;
 
                 document.querySelectorAll('.faq-card').forEach(other => {
@@ -246,7 +251,5 @@ const card = q.parentElement;
     </script>
 </body>
 </html>
-
-
 
 <?php include "includes/footer.php"; ?>
