@@ -1,4 +1,6 @@
 <?php include "includes/navbar.php"; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,5 +189,7 @@
                 tp.classList.add('show');
             }
         });
-    }
+    }   
+
 </script>
+<?php include "includes/footer.php"; ?>
