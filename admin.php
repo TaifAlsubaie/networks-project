@@ -1,7 +1,9 @@
 <?php
 include "includes/navbar.php";
 include "db.php";
+session_start();
 
+// رسائل الحالة والمتغيرات
 $message = "";
 $edit_mode = false;
 $edit_id = "";
@@ -11,6 +13,7 @@ $option2 = "";
 $option3 = "";
 $option4 = "";
 $correct_answer = "";
+$category = "";
 
 /* Delete */
 if (isset($_GET['delete'])) {
@@ -41,6 +44,7 @@ if (isset($_GET['edit'])) {
         $option3 = $row['answer_option_3'];
         $option4 = $row['answer_option_4'];
         $correct_answer = $row['correct_answer'];
+        $category = $row['category'];
     }
     $stmt->close();
 }
@@ -53,26 +57,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $option3 = trim($_POST['option3']);
     $option4 = trim($_POST['option4']);
     $correct_answer = trim($_POST['correct_answer']);
+    $category = trim($_POST['category']);
 
     if (isset($_POST['update_id']) && $_POST['update_id'] !== "") {
         $update_id = (int) $_POST['update_id'];
-        $stmt = $conn->prepare("UPDATE quiz_questions SET question_text=?, answer_option_1=?, answer_option_2=?, answer_option_3=?, answer_option_4=?, correct_answer=? WHERE question_id=?");
-        $stmt->bind_param("ssssssi", $question_text, $option1, $option2, $option3, $option4, $correct_answer, $update_id);
+        $stmt = $conn->prepare("UPDATE quiz_questions SET question_text=?, answer_option_1=?, answer_option_2=?, answer_option_3=?, answer_option_4=?, correct_answer=?, category=? WHERE question_id=?");
+        $stmt->bind_param("sssssssi", $question_text, $option1, $option2, $option3, $option4, $correct_answer, $category, $update_id);
         if ($stmt->execute()) {
             $message = "Question updated successfully.";
             $edit_mode = false;
             $edit_id = "";
-            $question_text = $option1 = $option2 = $option3 = $option4 = $correct_answer = "";
+            $question_text = $option1 = $option2 = $option3 = $option4 = $correct_answer = $category = "";
         } else {
             $message = "Error updating question: " . $conn->error;
         }
         $stmt->close();
     } else {
-        $stmt = $conn->prepare("INSERT INTO quiz_questions (question_text, answer_option_1, answer_option_2, answer_option_3, answer_option_4, correct_answer) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssss", $question_text, $option1, $option2, $option3, $option4, $correct_answer);
+        $stmt = $conn->prepare("INSERT INTO quiz_questions (question_text, answer_option_1, answer_option_2, answer_option_3, answer_option_4, correct_answer, category) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $question_text, $option1, $option2, $option3, $option4, $correct_answer, $category);
         if ($stmt->execute()) {
             $message = "Question added successfully.";
-            $question_text = $option1 = $option2 = $option3 = $option4 = $correct_answer = "";
+            $question_text = $option1 = $option2 = $option3 = $option4 = $correct_answer = $category = "";
         } else {
             $message = "Error adding question: " . $conn->error;
         }
@@ -91,7 +96,6 @@ $result = $conn->query("SELECT * FROM quiz_questions ORDER BY question_id DESC")
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin - Quiz Management</title>
 <style>
-/* نفس CSS القديم */
 body {font-family: Arial, sans-serif; background: #f5f7fa; margin:0; padding:0;}
 .container {width:90%; max-width:1100px; margin:30px auto;}
 h1,h2 {color:#1e3a8a;}
@@ -131,6 +135,7 @@ label {font-weight:bold; color:#334155;}
 <th>Option 2</th>
 <th>Option 3</th>
 <th>Option 4</th>
+<th>Category</th>
 <th>Correct Answer</th>
 <th>Actions</th>
 </tr>
@@ -139,11 +144,27 @@ label {font-weight:bold; color:#334155;}
 <tr>
 <td><?php echo $row['question_id']; ?></td>
 <td><?php echo $row['question_text']; ?></td>
-<td><?php echo $row['answer_option_1']; ?></td>
-<td><?php echo $row['answer_option_2']; ?></td>
-<td><?php echo $row['answer_option_3']; ?></td>
-<td><?php echo $row['answer_option_4']; ?></td>
+
+<!-- عرض الخيارات مع تمييز الإجابة الصحيحة -->
+<td <?php if(trim($row['correct_answer']) == trim($row['answer_option_1'])) echo 'style="font-weight:bold;color:green;"'; ?>>
+    <?php echo $row['answer_option_1']; ?>
+</td>
+
+<td <?php if(trim($row['correct_answer']) == trim($row['answer_option_2'])) echo 'style="font-weight:bold;color:green;"'; ?>>
+    <?php echo $row['answer_option_2']; ?>
+</td>
+
+<td <?php if(trim($row['correct_answer']) == trim($row['answer_option_3'])) echo 'style="font-weight:bold;color:green;"'; ?>>
+    <?php echo $row['answer_option_3']; ?>
+</td>
+
+<td <?php if(trim($row['correct_answer']) == trim($row['answer_option_4'])) echo 'style="font-weight:bold;color:green;"'; ?>>
+    <?php echo $row['answer_option_4']; ?>
+</td>
+
+<td><?php echo $row['category']; ?></td>
 <td><?php echo $row['correct_answer']; ?></td>
+
 <td class="actions">
 <a class="btn btn-edit" href="admin.php?edit=<?php echo $row['question_id']; ?>">Edit</a>
 <a class="btn btn-delete" href="admin.php?delete=<?php echo $row['question_id']; ?>" onclick="return confirm('Are you sure you want to delete this question?')">Delete</a>
@@ -151,7 +172,7 @@ label {font-weight:bold; color:#334155;}
 </tr>
 <?php endwhile; ?>
 <?php else: ?>
-<tr><td colspan="8">No questions found.</td></tr>
+<tr><td colspan="9">No questions found.</td></tr>
 <?php endif; ?>
 </table>
 </div>
@@ -178,13 +199,21 @@ label {font-weight:bold; color:#334155;}
 <label>Answer Option 4</label>
 <input type="text" name="option4" value="<?php echo htmlspecialchars($option4); ?>" required>
 
+
 <label>Correct Answer</label>
 <select name="correct_answer" required>
-<option value="">Select the correct answer</option>
-<option value="<?php echo htmlspecialchars($option1); ?>" <?php if($correct_answer == $option1) echo "selected"; ?>><?php echo $option1 != "" ? htmlspecialchars($option1) : "Option 1"; ?></option>
-<option value="<?php echo htmlspecialchars($option2); ?>" <?php if($correct_answer == $option2) echo "selected"; ?>><?php echo $option2 != "" ? htmlspecialchars($option2) : "Option 2"; ?></option>
-<option value="<?php echo htmlspecialchars($option3); ?>" <?php if($correct_answer == $option3) echo "selected"; ?>><?php echo $option3 != "" ? htmlspecialchars($option3) : "Option 3"; ?></option>
-<option value="<?php echo htmlspecialchars($option4); ?>" <?php if($correct_answer == $option4) echo "selected"; ?>><?php echo $option4 != "" ? htmlspecialchars($option4) : "Option 4"; ?></option>
+    <option value="">Select correct answer</option>
+    <option value="1" <?php if($correct_answer == "1") echo "selected"; ?>>Option 1</option>
+    <option value="2" <?php if($correct_answer == "2") echo "selected"; ?>>Option 2</option>
+    <option value="3" <?php if($correct_answer == "3") echo "selected"; ?>>Option 3</option>
+    <option value="4" <?php if($correct_answer == "4") echo "selected"; ?>>Option 4</option>
+</select>
+
+<label>Category</label>
+<select name="category" required>
+    <option value="">Select Category</option>
+    <option value="Ethernet" <?php if($category=="Ethernet") echo "selected"; ?>>Ethernet</option>
+    <option value="Wireless" <?php if($category=="Wireless") echo "selected"; ?>>Wireless</option>
 </select>
 
 <button class="btn btn-save" type="submit"><?php echo $edit_mode ? "Update Question" : "Add Question"; ?></button>
