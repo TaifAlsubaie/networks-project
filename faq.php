@@ -12,7 +12,7 @@
     
     <style>
         :root {
-            --navy-main: #001f3f; 
+            --navy-main: #1a3a5f; 
             --navy-light: #f0f7ff;
             --text-dark: #1e293b;
             --text-muted: #64748b;
@@ -36,7 +36,7 @@
         .faq-header h1 { 
             font-size: 2.8rem; 
             font-weight: 600; 
-            color: var(--navy-main); 
+            color:#1a3a5f; 
             margin-bottom: 15px;
         }
         .faq-header p { 

@@ -11,8 +11,8 @@
     
     <style>
         :root {
-            --blue-primary: #0062ff; 
-            --dark-navy: #0f172a;    
+            --blue-primary:#2c5da1; 
+            --dark-navy: #4065b8;    
             --text-gray: #cbd5e1;
             --border-gray: #e2e8f0; 
         }
@@ -23,7 +23,7 @@
         .hero {
             position: relative;
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)), 
-                        url('assets/images/index/Network.jpeg'); 
+                        url('assets/images/index/net.jpeg'); 
             background-size: cover;
             background-position: center;
             height: 70vh;
@@ -38,6 +38,11 @@
         .hero p { font-size: 1.2rem; color: var(--text-gray); line-height: 1.8; }
         
         .diagram-section { padding: 80px 10%; text-align: center; }
+        .diagram-section h2 { 
+            color: #1a3a5f; 
+            margin-bottom: 30px; 
+            font-weight: 700;
+        }
         .diagram-grid { 
             display: flex; 
             justify-content: center; 
@@ -86,7 +91,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid var(--border-gray);
         }
-        .quiz-card h2 { color: var(--dark-navy); margin-bottom: 30px; }
+        .quiz-card h2 { color:#1a3a5f; margin-bottom: 30px; }
         .quiz-item { text-align: left; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #f1f5f9; }
         .quiz-item p { font-weight: 600; color: var(--dark-navy); margin-bottom: 10px; }
         .quiz-options { display: flex; flex-direction: column; gap: 8px; }
