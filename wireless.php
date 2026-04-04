@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireless Technologies</title>
 
-    <!-- ربط ملف CSS -->
+    
     <link rel="stylesheet" href="assets/css/wireless.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
     <p>Fast, flexible, and cable-free connectivity for modern digital environments.</p>
 </div>
 
-<div class="container"> <!-- بدأ container -->
+<div class="container"> 
 
     <section>
         <h2>
@@ -141,7 +141,7 @@
         </ul>
     </section>
 
-</div> <!-- نهاية container -->
+</div> 
 
 <div class="container">
 <section class="content-card">
@@ -180,18 +180,18 @@
 
     <script>
     function toggleTooltips() {
-        // نحدد كل النصوص التي تحمل كلاس tooltip
+       
         const tooltips = document.querySelectorAll('.tooltip');
         
         tooltips.forEach(tp => {
-            // إذا ضغطتي والسويتش مفتوح (النصوص طالعة)، يخفيهم فوراً بدون تأخير
+           
             if (tp.classList.contains('show')) {
                 tp.style.transitionDelay = '0s'; 
                 tp.classList.remove('show');
             } 
-            // إذا كانوا مخفيين، يظهرهم بالترتيب (التأخير الزمني محدد في ملف CSS)
+           
             else {
-                tp.style.transitionDelay = ''; // يرجع يستخدم التأخير الموجود في CSS
+                
                 tp.classList.add('show');
             }
         });
