@@ -97,6 +97,7 @@
     <div class="chart-section">
         <h2>Quick Reference Comparison Chart</h2>
         <div class="table-wrapper">
+            <h2>Quick Reference <span>Comparison Chart</span></h2>
             <table>
                 <thead>
                     <tr>
@@ -121,7 +122,7 @@
         </div>
     </div>
 </main>
- 
+
 <script>
 function showContent(type) {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
