@@ -94,27 +94,27 @@ body {
 }
 
 .card-icon {
-    width: 65px;
+    width: 65px; 
     height: 65px;
     border-radius: 16px;
-    display: flex;
-    align-items: center;
+    display: flex; 
+    align-items: center; 
     justify-content: center;
-    font-size: 26px;
+    font-size: 26px; 
     margin-bottom: 25px;
+    /* خلفية زرقاء فاتحة جداً للأيقونات */
+    background: #eff6ff; 
+    /* لون الأيقونة الأزرق المطلوب */
+    color: #4065b8; 
 }
-
-.blue { background: #eff6ff; color: #2563eb; }
-.green { background: #f0fdf4; color: #16a34a; }
-.purple { background: #faf5ff; color: #9333ea; }
 
 .specs { list-style: none; padding: 0; margin-top: 20px; }
 .specs li { margin-bottom: 12px; display: flex; align-items: flex-start; color: #475569; font-size: 0.95rem; }
 .specs i { color: #2563eb; margin-right: 12px; margin-top: 4px; }
 
-.chart-section {
-    margin: 80px 0;
-    text-align: center;
+.chart-section { 
+    margin: 80px 0; 
+    text-align: center; 
 }
 
 .chart-section h2 { margin-bottom: 40px; font-size: 2.2rem; font-weight: 800; }
@@ -128,10 +128,10 @@ body {
     overflow-x: auto;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
 }
 
 th {
@@ -143,10 +143,10 @@ th {
 }
 
 td { 
-    padding: 22px 24px;
-    border-bottom: 1px solid #f1f5f9;
-    color: #334155;
-    font-size: 1rem;
+    padding: 22px 24px; 
+    border-bottom: 1px solid #f1f5f9; 
+    color: #334155; 
+    font-size: 1rem; 
 }
 
 tr:last-child td { border-bottom: none; }
@@ -156,6 +156,7 @@ tr:hover td { background-color: #f1f7ff; }
     display: none; 
     animation: slideUp 0.5s ease-out; 
 }
+
 .tab-content.active { display: block; }
 
 @keyframes slideUp {
