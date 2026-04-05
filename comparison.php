@@ -26,7 +26,7 @@
     <div id="eth-content" class="tab-content active">
         <div class="cards-grid">
             <div class="info-card">
-                <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div class="card-icon blue"><i class="fas fa-bolt"></i></div>
                 <h3>Standards & Speeds</h3>
                 <p>Consistent full-duplex transmission based on IEEE 802.3 standards.</p>
                 <ul class="specs">
@@ -36,7 +36,7 @@
                 </ul>
             </div>
             <div class="info-card featured">
-                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                <div class="card-icon green"><i class="fas fa-shield-alt"></i></div>
                 <h3>Security & Reliability</h3>
                 <p>Maximum stability with inherent physical security.</p>
                 <ul class="specs">
@@ -46,7 +46,7 @@
                 </ul>
             </div>
             <div class="info-card">
-                <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                <div class="card-icon purple"><i class="fas fa-briefcase"></i></div>
                 <h3>Real-World Use Cases</h3>
                 <p>Preferred in environments where uptime and speed are critical.</p>
                 <ul class="specs">
@@ -61,7 +61,7 @@
     <div id="wifi-content" class="tab-content">
         <div class="cards-grid">
             <div class="info-card">
-                <div class="card-icon"><i class="fas fa-wifi"></i></div>
+                <div class="card-icon blue"><i class="fas fa-signal"></i></div>
                 <h3>Wireless Standards</h3>
                 <p>Evolution of IEEE 802.11 standards providing mobility and flexibility.</p>
                 <ul class="specs">
@@ -71,7 +71,7 @@
                 </ul>
             </div>
             <div class="info-card featured">
-                <div class="card-icon"><i class="fas fa-key"></i></div>
+                <div class="card-icon green"><i class="fas fa-key"></i></div>
                 <h3>Security & Performance</h3>
                 <p>Protection via encryption protocols and environmental factors.</p>
                 <ul class="specs">
@@ -81,7 +81,7 @@
                 </ul>
             </div>
             <div class="info-card">
-                <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="card-icon purple"><i class="fas fa-home"></i></div>
                 <h3>Real-World Use Cases</h3>
                 <p>Designed for environments requiring mobility and flexibility.</p>
                 <ul class="specs">
@@ -94,8 +94,8 @@
     </div>
 
     <div class="chart-section">
-        <h2>Quick Reference <span>Comparison Chart</span></h2>
         <div class="table-wrapper">
+            <h2>Quick Reference <span>Comparison Chart</span></h2>
             <table>
                 <thead>
                     <tr>
@@ -115,7 +115,7 @@
         </div>
     </div>
 </main>
- 
+
 <script>
 function showContent(type) {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
