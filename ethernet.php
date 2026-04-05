@@ -189,5 +189,7 @@
                 tp.classList.add('show');
             }
         });
-    }
+    }   
+
 </script>
+<?php include "includes/footer.php"; ?>
