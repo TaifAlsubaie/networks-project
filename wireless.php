@@ -1,4 +1,15 @@
 <?php include "includes/navbar.php"; ?>
+<?php
+include "db.php";
+
+$category = "wireless";
+
+$stmt = $conn->prepare("SELECT * FROM quiz_questions WHERE category = ?");
+$stmt->bind_param("s", $category);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
+<script src="assets/js.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,6 +187,7 @@
     </div>
         </div>
     </section>
+
     </div>
 
     <script>
@@ -197,7 +209,56 @@
         });
     }
 </script>
+<div class="container">
+<section class="content-card">
 
+<h2 class="section-title" >Ready to Test Your Knowledge?</h2>
+<p class="quiz-subtitle">Click the button below to start the quiz</p>
+
+<button type="button" id="startBtn" onclick="startQuiz()">Start Quiz</button>
+
+<form id="quizForm" style="display:none;">
+<div class="quiz-container">
+
+<?php $i = 0; while($row = $result->fetch_assoc()): ?>
+<div class="question-card" data-correct="<?php echo $row['correct_answer']; ?>" style="display:none;">
+
+    <h3><?php echo $row['question_text']; ?></h3>
+
+    <div class="options">
+
+        <label>
+            <input type="radio" name="q<?php echo $row['question_id']; ?>" value="1">
+            <?php echo $row['answer_option_1']; ?>
+        </label>
+
+        <label>
+            <input type="radio" name="q<?php echo $row['question_id']; ?>" value="2">
+            <?php echo $row['answer_option_2']; ?>
+        </label>
+
+        <label>
+            <input type="radio" name="q<?php echo $row['question_id']; ?>" value="3">
+            <?php echo $row['answer_option_3']; ?>
+        </label>
+
+        <label>
+            <input type="radio" name="q<?php echo $row['question_id']; ?>" value="4">
+            <?php echo $row['answer_option_4']; ?>
+        </label>
+
+    </div>
+</div>
+<?php $i++; endwhile; ?>
+
+<button type="button" id="nextBtn" onclick="nextQuestion()">Next</button>
+
+<div class="result" id="result"></div>
+
+</div>
+</form>
+
+</div>
 </body>
 </html>
 

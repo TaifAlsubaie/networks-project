@@ -60,7 +60,7 @@ $stmt->bind_param("s", $username);
         </div>
 
         <button type="submit" name="login" class="btn auth-btn">
-            🔒 Sign In
+            Sign In
         </button>
 
         <?php if($error != ""): ?>
