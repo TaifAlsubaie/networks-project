@@ -1,0 +1,122 @@
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #1a3a5f 0%, #2c5da1 100%);
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: -30px auto 50px;
+    padding: 0 20px;
+}
+
+.content-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.section-title {
+    color: #1a3a5f;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.simulator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-group label {
+    font-weight: bold;
+    color: #1a3a5f;
+    margin-bottom: 8px;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.test-btn {
+    background: #2c5da1;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.test-btn:hover {
+    background: #1a3a5f;
+    transform: translateY(-2px);
+}
+
+.results-area {
+    text-align: center;
+    width: 100%;
+}
+
+.gauge-container {
+    width: 180px;
+    height: 180px;
+    border: 6px solid #f1f5f9;
+    border-top: 6px solid #2c5da1;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #f8fafc;
+}
+
+.speed-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1a3a5f;
+}
+
+.unit {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.insight-box {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #f0f7ff;
+    border-left: 5px solid #2c5da1;
+    color: #1e40af;
+    border-radius: 4px;
+    display: none; 
+}
