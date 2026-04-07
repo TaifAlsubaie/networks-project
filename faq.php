@@ -163,43 +163,43 @@
         $faqs = [
             [
                 "q" => "What is the maximum effective distance for Ethernet cables?", 
-                "a" => "The standard maximum distance for a copper Ethernet cable (UTP) is 100 meters. Beyond this point, data signals weaken significantly.", 
+                "a" => "The standard maximum distance for a copper Ethernet cable (UTP) is 100 meters. Beyond this point, data signals weaken significantly .", 
                 "link" => "ethernet.php",
                 "link_text" => "Explore more about Ethernet standards →"
             ],
             [
                 "q" => "How do obstacles affect Wi-Fi performance?", 
-                "a" => "Physical barriers like walls and metal objects absorb radio waves, which can lead to dead zones and reduced stability in your wireless connection.", 
+                "a" => "Physical barriers like walls and metal objects absorb radio waves, which can lead to dead zones and reduced stability in your wireless connection .", 
                 "link" => "wireless.php",
                 "link_text" => "Learn more about signal interference →"
             ],
             [
                 "q" => "How do I choose the right Ethernet cable for my network?", 
-                "a" => "For high-speed Gigabit networks, Cat6 is highly recommended. For basic home use, Cat5e is usually sufficient for distances under 100m.", 
+                "a" => "For high-speed Gigabit networks, Cat6 is highly recommended. For basic home use, Cat5e is usually sufficient for distances under 100m .", 
                 "link" => "ethernet.php",
                 "link_text" => "Check Ethernet cable categories →"
             ],
             [
                 "q" => "What is the difference between WPA2 and WPA3 security?", 
-                "a" => "WPA3 is the latest security standard, offering improved encryption and better protection against brute-force attacks compared to WPA2.", 
+                "a" => "WPA3 is the latest security standard, offering improved encryption and better protection against brute-force attacks compared to WPA2 .", 
                 "link" => "wireless.php",
                 "link_text" => "Discover Wireless security features →"
             ],
             [
                 "q" => "Why is Wi-Fi more prone to interference than Ethernet?", 
-                "a" => "Wi-Fi operates on shared radio frequencies that can be disrupted by other electronic devices. Ethernet is a dedicated, shielded physical path.", 
+                "a" => "Wi-Fi operates on shared radio frequencies that can be disrupted by other electronic devices. Ethernet is a dedicated, shielded physical path .", 
                 "link" => "comparison.php",
                 "link_text" => "Compare connection reliability →"
             ],
             [
                 "q" => "Do adapters affect Ethernet speed performance?", 
-                "a" => "Yes, low-quality adapters or using old USB 2.0 ports can throttle your connection speed, even if you are using a high-speed Ethernet cable.", 
+                "a" => "Yes, low-quality adapters or using old USB 2.0 ports can throttle your connection speed, even if you are using a high-speed Ethernet cable .", 
                 "link" => "ethernet.php",
                 "link_text" => "View hardware compatibility tips →"
             ],
             [
                 "q" => "Is Wi-Fi faster than a wired Ethernet connection?", 
-                "a" => "While Wi-Fi 6 is very fast, Ethernet generally provides lower latency and more consistent speeds because it isn't affected by environmental factors.", 
+                "a" => "While Wi-Fi 6 is very fast, Ethernet generally provides lower latency and more consistent speeds because it isn't affected by environmental factors .", 
                 "link" => "comparison.php",
                 "link_text" => "View performance comparison charts →"
             ]
