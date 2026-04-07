@@ -104,7 +104,7 @@
     <header class="hero">
         <div class="hero-content">
             <h1>Where Efficiency Meets Cutting-Edge Technology</h1>
-            <p>Ethernet and Wi-Fi are two main technologies for connecting devices to Local Area Networks (LAN) and the Internet</p>
+            <p>Ethernet and Wi-Fi are two main technologies for connecting devices to Local Area Networks (LAN) and the Internet . </p>
         </div>
     </header>
 
@@ -114,14 +114,14 @@
             <div class="card">
                 <img src="assets/images/index/ethernet-icon.png" alt="Ethernet">
                 <h3>Ethernet</h3>
-                <p>A wired technology that uses physical cables to connect devices to a network.</p>
+                <p>A wired technology that uses physical cables to connect devices to a network .</p>
                 <a href="ethernet.php" class="btn-oval">Ethernet</a>
             </div>
 
             <div class="card">
                 <img src="assets/images/index/wifi-icon.png" alt="Wireless">
                 <h3>Wireless</h3>
-                <p>A wireless technology that transmits data via radio waves for mobility and flexibility.</p>
+                <p>A wireless technology that transmits data via radio waves for mobility and flexibility .</p>
                 <a href="wireless.php" class="btn-oval">Wireless</a>
             </div>
         </div>
@@ -132,7 +132,7 @@
             <h2>Quick Knowledge Check</h2>
             
             <div class="quiz-item">
-                <p>1. Which connection is known for having higher stability and less interference?</p>
+                <p>1. Which connection is known for having higher stability and less interference ? </p>
                 <div class="quiz-options">
                     <label class="quiz-option"><input type="radio" name="q1" value="correct"> Ethernet (Wired)</label>
                     <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Wi-Fi (Wireless)</label>
@@ -140,7 +140,7 @@
             </div>
 
             <div class="quiz-item">
-                <p>2. What is the primary benefit of using Wireless (Wi-Fi)?</p>
+                <p>2. What is the primary benefit of using Wireless (Wi-Fi) ? </p>
                 <div class="quiz-options">
                     <label class="quiz-option"><input type="radio" name="q2" value="wrong"> Needs physical cables</label>
                     <label class="quiz-option"><input type="radio" name="q2" value="correct"> Mobility and ease of connection</label>
@@ -148,7 +148,7 @@
             </div>
 
             <div class="quiz-item">
-                <p>3. Which cable is commonly used for Ethernet networks?</p>
+                <p>3. Which cable is commonly used for Ethernet networks ? </p>
                 <div class="quiz-options">
                     <label class="quiz-option"><input type="radio" name="q3" value="correct"> RJ45 / Cat6 Cable</label>
                     <label class="quiz-option"><input type="radio" name="q3" value="wrong"> HDMI Cable</label>
