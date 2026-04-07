@@ -119,14 +119,15 @@ label {font-weight:bold; color:#334155;}
 </head>
 <body>
 <div class="container">
-<h1>Quiz Management Page</h1>
+
 
 <?php if ($message != ""): ?>
 <div class="message"><?php echo $message; ?></div>
 <?php endif; ?>
 
 <div class="card">
-<h2>All Questions</h2>
+    <h1>Quiz Management Page</h1>
+
 <table>
 <tr>
 <th>ID</th>
