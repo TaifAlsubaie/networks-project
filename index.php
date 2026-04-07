@@ -11,8 +11,8 @@
     
     <style>
         :root {
-            --blue-primary: #0062ff; 
-            --dark-navy: #0f172a;    
+            --blue-primary:#2c5da1; 
+            --dark-navy: #4065b8;    
             --text-gray: #cbd5e1;
             --border-gray: #e2e8f0; 
         }
@@ -23,7 +23,7 @@
         .hero {
             position: relative;
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)), 
-                        url('assets/images/index/Network.jpeg'); 
+                        url('assets/images/index/net.jpeg'); 
             background-size: cover;
             background-position: center;
             height: 70vh;
@@ -38,6 +38,11 @@
         .hero p { font-size: 1.2rem; color: var(--text-gray); line-height: 1.8; }
         
         .diagram-section { padding: 80px 10%; text-align: center; }
+        .diagram-section h2 { 
+            color: #1a3a5f; 
+            margin-bottom: 30px; 
+            font-weight: 700;
+        }
         .diagram-grid { 
             display: flex; 
             justify-content: center; 
@@ -86,7 +91,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border: 1px solid var(--border-gray);
         }
-        .quiz-card h2 { color: var(--dark-navy); margin-bottom: 30px; }
+        .quiz-card h2 { color:#1a3a5f; margin-bottom: 30px; }
         .quiz-item { text-align: left; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #f1f5f9; }
         .quiz-item p { font-weight: 600; color: var(--dark-navy); margin-bottom: 10px; }
         .quiz-options { display: flex; flex-direction: column; gap: 8px; }
@@ -99,7 +104,7 @@
     <header class="hero">
         <div class="hero-content">
             <h1>Where Efficiency Meets Cutting-Edge Technology</h1>
-            <p>Ethernet and Wi-Fi are two main technologies for connecting devices to Local Area Networks (LAN) and the Internet</p>
+            <p>Ethernet and Wi-Fi are two main technologies for connecting devices to Local Area Networks (LAN) and the Internet . </p>
         </div>
     </header>
 
@@ -109,14 +114,14 @@
             <div class="card">
                 <img src="assets/images/index/ethernet-icon.png" alt="Ethernet">
                 <h3>Ethernet</h3>
-                <p>A wired technology that uses physical cables to connect devices to a network.</p>
+                <p>A wired technology that uses physical cables to connect devices to a network .</p>
                 <a href="ethernet.php" class="btn-oval">Ethernet</a>
             </div>
 
             <div class="card">
                 <img src="assets/images/index/wifi-icon.png" alt="Wireless">
                 <h3>Wireless</h3>
-                <p>A wireless technology that transmits data via radio waves for mobility and flexibility.</p>
+                <p>A wireless technology that transmits data via radio waves for mobility and flexibility .</p>
                 <a href="wireless.php" class="btn-oval">Wireless</a>
             </div>
         </div>
@@ -127,7 +132,7 @@
             <h2>Quick Knowledge Check</h2>
             
             <div class="quiz-item">
-                <p>1. Which connection is known for having higher stability and less interference?</p>
+                <p>1. Which connection is known for having higher stability and less interference ? </p>
                 <div class="quiz-options">
                     <label class="quiz-option"><input type="radio" name="q1" value="correct"> Ethernet (Wired)</label>
                     <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Wi-Fi (Wireless)</label>
@@ -135,7 +140,7 @@
             </div>
 
             <div class="quiz-item">
-                <p>2. What is the primary benefit of using Wireless (Wi-Fi)?</p>
+                <p>2. What is the primary benefit of using Wireless (Wi-Fi) ? </p>
                 <div class="quiz-options">
                     <label class="quiz-option"><input type="radio" name="q2" value="wrong"> Needs physical cables</label>
                     <label class="quiz-option"><input type="radio" name="q2" value="correct"> Mobility and ease of connection</label>
@@ -143,7 +148,7 @@
             </div>
 
             <div class="quiz-item">
-                <p>3. Which cable is commonly used for Ethernet networks?</p>
+                <p>3. Which cable is commonly used for Ethernet networks ? </p>
                 <div class="quiz-options">
                     <label class="quiz-option"><input type="radio" name="q3" value="correct"> RJ45 / Cat6 Cable</label>
                     <label class="quiz-option"><input type="radio" name="q3" value="wrong"> HDMI Cable</label>
