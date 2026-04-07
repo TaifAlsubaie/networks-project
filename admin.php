@@ -96,8 +96,8 @@ $result = $conn->query("SELECT * FROM quiz_questions ORDER BY question_id DESC")
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin - Quiz Management</title>
 <style>
-body {font-family: Arial, sans-serif; background: #f5f7fa; margin:0; padding:0;}
-.container {width:90%; max-width:1100px; margin:30px auto;}
+body {font-family: Arial, sans-serif; background: #f5f7fa; margin:0; padding:0;   padding-top: 100px;}
+.container {width:90%; max-width:1100px; margin:100px auto 35px;}
 h1,h2 {color:#1e3a8a;}
 .card {background:#fff; border-radius:12px; padding:20px; margin-bottom:25px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
 .message {background:#e0f2fe; color:#0c4a6e; padding:12px 15px; border-radius:8px; margin-bottom:15px;}
@@ -119,14 +119,14 @@ label {font-weight:bold; color:#334155;}
 </head>
 <body>
 <div class="container">
-
+ <h1>Quiz Management Page</h1>
 
 <?php if ($message != ""): ?>
 <div class="message"><?php echo $message; ?></div>
 <?php endif; ?>
 
 <div class="card">
-    <h1>Quiz Management Page</h1>
+    <h2>All questions</h2>
 
 <table>
 <tr>
