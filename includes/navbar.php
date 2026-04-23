@@ -45,6 +45,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <li>
                 <a href="faq.php" class="nav-item <?php echo ($current_page == 'faq.php') ? 'active' : ''; ?>">FAQ</a>
             </li>
+            <li>
+                <a href="about.php" class="nav-item <?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About</a>
+            </li>
         </ul>
 
         <div class="user-action">
